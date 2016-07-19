@@ -1,0 +1,41 @@
+{
+  "name": "minidocs-example",
+  "version": "0.0.0",
+  "description": "example for minidocs",
+  "main": "index.js",
+  "scripts": {
+    "bundle:min": "browserify index.js -t minidocs/transform -g unassertify -g yo-yoify -g es2020 -g uglifyify -t envify -p bundle-collapser/plugin > bundle.min.js",
+    "bundle": "browserify index.js -o bundle.js -t minidocs/transform",
+    "start": "budo index.js:bundle.js -l -P -- -t minidocs/transform -g unassertify -g yo-yoify -g es2020 -g uglifyify -t envify -p bundle-collapser/plugin"
+  },
+  "browserify": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeman-lab/minidocs.git"
+  },
+  "keywords": [
+    "minidocs",
+    "example",
+    "documentation"
+  ],
+  "author": "freeman-lab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freeman-lab/minidocs/issues"
+  },
+  "homepage": "https://github.com/freeman-lab/minidocs#readme",
+  "dependencies": {
+    "read-directory": "^1.2.0",
+    "yo-yoify": "^3.3.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "budo": "^8.3.0",
+    "bundle-collapser": "^1.2.1",
+    "envify": "^3.4.1",
+    "es2020": "^1.1.7",
+    "uglifyify": "^3.0.2",
+    "uglifyjs": "^2.4.10",
+    "unassertify": "^2.0.3"
+  }
+}
